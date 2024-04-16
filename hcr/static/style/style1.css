@@ -1,0 +1,19 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: rgb(93, 93, 234);
+}
+#container {
+  margin-top: 50px;
+  
+}
+#imageContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+#imageContainer img {
+  max-width: 200px;
+  max-height: 200px;
+  margin-bottom: 10px;
+}
