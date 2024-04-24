@@ -232,7 +232,7 @@ def OutputFiles(request):
 #################################                                 ###################################################################################################
 #####################################################################################################################################################################
  
-    path = os.path.join(BASE_DIR,'media/images/test.jpg')
+    path = os.path.join(BASE_DIR,'media\images\image.jpg')
     # path = "image.jpg"
 
     print(path)
@@ -347,7 +347,7 @@ def OutputFiles(request):
 
     new_list = [str(item) for item in new_list]
 
-    char_string = ', '.join([str(item) for item in new_list])
+    char_string = ','.join([str(item) for item in new_list])
 
     symbol_to_remove = ","
 
@@ -379,7 +379,7 @@ def ClearAll(request,id):
             img_path = os.path.join(lines_folder, filename)
             os.remove(img_path)
 
-    image_path = os.path.join(BASE_DIR,'media/images/test.jpg')
+    image_path = os.path.join(BASE_DIR,'media/images/image.jpg')
     os.remove(image_path)
 
     for label in range(100):
