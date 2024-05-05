@@ -1,19 +1,24 @@
-body {
+#bg{
+  background-repeat: no-repeat;
+  background-position: top;
+  background-attachment: fixed;
+  background-size: 1900px 740px;
   margin-top: 75px;
   font-family: Arial, sans-serif;
   text-align: center;
-  color: rgb(0, 0, 0);
-  background-color: rgb(238, 238, 238);
 }
 
-h2 {
-  color: white;
+
+h1 {
+  color: rgb(8, 8, 8);
+  text-align: center;
 }
 #container {
   margin-top: 30px;
   
 }
 #imageContainer {
+  padding-top: 50px;
   margin-top: 20px;
   display: flex;
   justify-content: space-around;
@@ -26,7 +31,21 @@ h2 {
 }
 
 
-a:link, a:visited {
+
+#convert:link, #convert:visited{
+  background-color: rgb(0, 242, 36);
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+
+}
+#convert:hover, #convert:active{
+  background-color: rgb(0, 183, 18);
+}
+
+#clear:link, #clear:visited {
   background-color: #f44336;
   color: white;
   padding: 14px 25px;
@@ -35,6 +54,6 @@ a:link, a:visited {
   display: inline-block;
 }
 
-a:hover, a:active {
+#clear:hover, #clear:active {
   background-color: red;
 }

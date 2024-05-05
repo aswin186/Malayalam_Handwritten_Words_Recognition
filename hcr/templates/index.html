@@ -1,17 +1,16 @@
-{% load static %}
-
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <title>MHWR</title>
 
-  <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+  <link rel="stylesheet" type="text/css" media="screen" href="{%static 'css/style1.css'%}">
 </head>
 
-<body>
-  <h1>Select Image to Upload</h1>
+<body id="bg" style="background-image: url('{%static 'images/backgd.png'%}');">
+  <h1>Select Image to Convert</h1>
   <div id="container">
 
     <form action="." method="POST" enctype="multipart/form-data">
@@ -36,8 +35,8 @@
           <!-- <h1>Uploaded Image is: </h1> -->
           <img src="{{x.image.url}}" height=400px width=580px class="img-thumbnail" alt="...">
           <div>
-            <a href="{% url 'clear' x.id %}" target="_blank">Clar All</a>
-            <a href="{% url 'out' %}" target="_blank">Convert</a>
+            <a id="clear" href="{% url 'clear' x.id %}" target="_blank">Clar All</a>
+            <a id="convert" href="{% url 'out' %}" target="_blank">Convert</a>
           </div>
         </div>
       </div>
