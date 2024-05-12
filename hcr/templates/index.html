@@ -19,28 +19,20 @@
       <button type="submit">Upload</button>
     </form>
 
-    <!-- {% if obj %}
-    <h3>Succesfully Uploaded : </h3>
-    <img src="{{obj.image.url}}" alt="image">
-    {% endif %} -->
-
-   
-
     {% for x in img %}
     {% if forloop.first %}
     <div class="row ">
       {% endif %}
       <div >
         <div class="imageContainer_img">
-          <!-- <h1>Uploaded Image is: </h1> -->
           <img src="{{x.image.url}}" height=400px width=580px class="img-thumbnail" alt="...">
           <div>
             <a id="clear" href="{% url 'clear' x.id %}" target="_blank">Clar All</a>
-            <a id="convert" href="{% url 'out' %}" target="_blank">Convert</a>
+            <a id="convert" href="{% url 'out' x.id %}" target="_blank">Convert</a>
           </div>
         </div>
       </div>
-      {% if forloop.counter|divisibleby:3 %}
+      {% if forloop.counter|divisibleby:2 %}
     </div>
       <div class=row>
         {% endif %}
