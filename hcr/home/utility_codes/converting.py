@@ -1,8 +1,7 @@
-def convertingToCharacters(predicted_labels, num):
+def converting_characters(predicted_labels, num):
     
     chars = predicted_labels
-    charsnum = num
-
+    chars_num = num
     classes = {
         "0": " ",
         "1": "അ",
@@ -102,12 +101,12 @@ def convertingToCharacters(predicted_labels, num):
 
     for c in characters:
         new_list.append(c)
-        charsnum[lines_index] -= 1  # Decrease the count for the current line
+        chars_num[lines_index] -= 1  # Decrease the count for the current line
 
-        if charsnum[lines_index] == 0:  # Check if the count for the current line has reached 0
+        if chars_num[lines_index] == 0:  # Check if the count for the current line has reached 0
             new_list.append('\n')  # Add newline character
             lines_index += 1  # Move to the next line count from the 'lines' list
-            if lines_index >= len(charsnum):  # Check if all line counts have been processed
+            if lines_index >= len(chars_num):  # Check if all line counts have been processed
                 break
 
     new_list = [str(item) for item in new_list]

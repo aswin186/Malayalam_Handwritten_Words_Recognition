@@ -7,7 +7,7 @@ def clearing(image_name):
     os.remove(img_name)
 
 
-def convertClearing():
+def convert_clearing():
     
     lines_folder = "lines"
     for filename in os.listdir(lines_folder):

@@ -1,7 +1,7 @@
 import os
 from hcr.settings import BASE_DIR
 
-def normPath(path):
+def norm_path(path):
     new = path
     old_name = os.path.normpath(new)
     image_url = str(os.path.join(BASE_DIR) + str(old_name)).replace('\\','/')

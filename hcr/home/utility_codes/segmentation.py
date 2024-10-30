@@ -5,21 +5,21 @@ import numpy as np
 from scipy import ndimage
 import os
 
-def openFirstImage(path):
+def open_first_image(path):
     img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
     ret, img = cv2.threshold(img, 130, 255, cv2.THRESH_BINARY)
     return img
 
-def showImage(img1):
+def show_image(img1):
     cv2.imshow('image', img1)
     cv2.waitKey()
     cv2.destroyAllWindows()
 
-def saveImage(img, line_id, folder_path):
+def save_image(img, line_id, folder_path):
     filename = os.path.join(folder_path, f"line_{line_id}.png")
     cv2.imwrite(filename, img)
 
-def lineSegment(img):
+def line_segment(img):
     height, width = img.shape
     # print(height, width)
     lines = []
@@ -40,7 +40,7 @@ def lineSegment(img):
                 img1 = img[start:i, 0:width]
                 lines.append(img1)
 
-                saveImage(img1, line_id, "lines")  # Save to the "lines" folder
+                save_image(img1, line_id, "lines")  # Save to the "lines" folder
                 line_id += 1
 
                 start = i
@@ -49,14 +49,9 @@ def lineSegment(img):
     #     showImage(lines[i])
     return lines
 
-def openImage(path):
+def open_image(path):
     img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
     return img
-
-def showImage(img1):
-    cv2.imshow('image', img1)
-    cv2.waitKey()
-    cv2.destroyAllWindows()
 
 def find_connected(img, label, id, i, j, threshold, xmin, ymin, xmax, ymax):
     h, w = img.shape
@@ -140,7 +135,7 @@ def segment():
     
         if filename.endswith(".png"):
             img_path = os.path.join(lines_folder, filename)
-            img = openImage(img_path)
+            img = open_image(img_path)
             # print(f'--> Processing Image: {filename}')
             
             ret, img = cv2.threshold(img, 130, 255, cv2.THRESH_BINARY_INV)
