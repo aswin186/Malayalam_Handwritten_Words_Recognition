@@ -22,15 +22,15 @@ python -m venv env
 ### Change the Directory to
 cd Malayalam_Handwritten_Words_Recognition/hcr
 
-### Install the required dependencies:
+### Install the required dependencies
 pip install -r requirements.txt
 
 ### Database Migrations
-Once dependencies are installed, apply the database migrations:
+Once dependencies are installed, apply the database migrations
 python manage.py migrate
 
 ### Running the Development Server
-To start the Django development server, run:
+To start the Django development server, run
 python manage.py runserver
 
 ### Now, you can access the project at http://127.0.0.1:8000/ in your browser.
