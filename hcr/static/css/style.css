@@ -1,0 +1,31 @@
+#bg{
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+    background-size: 1900px 740px;
+    margin-top: 75px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+  
+h2 {
+    color: white;
+}
+
+#container {
+    margin-top: 30px;
+    
+}
+
+#imageContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#imageContainer_img {
+    margin-top: 50px;
+    max-width: 100px;
+    max-height: 100px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>MHWR</title>
+
+  <link rel="stylesheet" type="text/css" media="screen" href="{%static 'css/style1.css'%}">
+</head>
+
+<body id="bg" style="background-image: url('{%static 'images/backgd.png'%}');">
+  <h1>Select Image to Convert</h1>
+  <div id="container">
+
+    <form action="." method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{form.as_p}}
+      <button type="submit">Upload</button>
+    </form>
+
+    {% for x in img %}
+    {% if forloop.first %}
+    <div class="row ">
+      {% endif %}
+      <div >
+        <div class="imageContainer_img">
+          <img src="{{x.image.url}}" height=400px width=580px class="img-thumbnail" alt="...">
+          <div>
+            <a id="clear" href="{% url 'clear' x.id %}" target="_blank">Clar All</a>
+            <a id="convert" href="{% url 'out' x.id %}" target="_blank">Convert</a>
+          </div>
+        </div>
+      </div>
+      {% if forloop.counter|divisibleby:2 %}
+    </div>
+      <div class=row>
+        {% endif %}
+
+        {% if forloop.last %}
+      </div>{% endif %}
+      {% endfor %}
+
+  </div>
+
+</body>
+
+</html>
